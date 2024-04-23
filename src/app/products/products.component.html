@@ -1,12 +1,12 @@
 <div *ngFor="let p of products">
-    <div class="product-container">
+    <div class="product-container" [ngStyle]="{backgroundColor: p.available === 'Available' ? 'LightGreen' : '#FADBD8'}">
         <div class="image-container">
             <img [src]="p.image" alt="" style="max-height: 50px; max-width: 50px;">
         </div>
         <div>
             <div class="name-container"><h6>{{ p.name }}</h6></div>
             <div class="detailContainer">
-                <div class="details">{{ p.available }}</div>
+                <div class="details" [ngStyle]="{color: p.available === 'Available' ? 'Green' : 'Red'}">{{ p.available }}</div>
                 <div class="details"><b>Price:</b>${{ p.Price }}</div>
                 <div class="details"><b>Color:</b>{{ p.color }}</div>
             </div>

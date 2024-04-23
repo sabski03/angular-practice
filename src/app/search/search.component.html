@@ -2,5 +2,5 @@
     <span><b>Search:</b></span>
     <!-- <input type="text" (input)="changeSearchValue($event)"> -->
     <input type="text" [(ngModel)]="searchValue">
-    <span>You Searched For "{{ searchValue }}"</span>
+    <span *ngIf="searchValue != '' ">You Searched For "{{ searchValue }}"</span>
 </div>

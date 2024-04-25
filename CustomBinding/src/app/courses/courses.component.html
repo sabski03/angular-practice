@@ -7,11 +7,11 @@
         <div>
             <img [src]="course.image" style="width: 220px; height: 140px;">
         </div>
-        <div class="course-name"><h4>{{ course.name }}</h4></div>
+        <div class="course-name"><h4>{{ course.name | uppercase }}</h4></div>
         <div class="couse-description"><p>{{ course.description }}</p></div>
         <div class="details">
             <div class="course-type" [ngStyle]="{color: course.type === 'Free'? 'Green' : 'Red'}">{{course.type}}</div>
-            <div class="course-price"><b>Price:</b> ${{course.price}}</div>
+            <div class="course-price"><b>Price:</b> {{course.price | currency: 'USD': true: '2.2-2'}}</div>
         </div>
         <div class="course-buttons">
             <button class="btn btn-success">Buy Now</button>
